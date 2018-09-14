@@ -28731,73 +28731,65 @@ ion-modle-g .fz-32 {
   font-weight: normal;
 }
 
-ion-modle-g .test1 {
-  background-color: #efefef;
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-  padding-top: 3px;
+ion-modle-g .test2 {
+  background-color: white;
+  border: 2px solid #efefef;
+  border-radius: 2px;
+  padding: 0px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
-ion-modle-g .test1 .test2 {
+ion-modle-g .product {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+ion-modle-g .product ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 50%;
-  float: left;
-  position: relative;
-  background-color: white;
-  border: 2px solid #efefef;
-  border-radius: 2px;
-  padding: 0px;
 }
 
-ion-modle-g .test1 .test2 p {
-  margin: 0px;
+ion-modle-g .product ul li p {
+  margin-top: 12px;
   padding: 0px;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   font-family: "黑体-简";
   font-weight: 300;
-  color: #808080;
-  height: 26px;
-  line-height: 26px;
+  color: black;
   background: rgba(255, 255, 255, 0.8);
-  overflow: hidden;
-  text-indent: 5px;
-}
-
-ion-modle-g .product ion-row {
-  background-color: #efefef;
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-  padding-top: 3px;
-}
-
-ion-modle-g .product ion-row ion-col {
-  position: relative;
-  background-color: white;
-  border: 2px solid #efefef;
-  border-radius: 2px;
-  padding: 0px;
-}
-
-ion-modle-g .product ion-row ion-col p {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  font-size: 12px;
-  font-family: "黑体-简";
-  font-weight: 300;
-  color: #808080;
-  height: 26px;
-  line-height: 26px;
-  background: rgba(255, 255, 255, 0.8);
-  overflow: hidden;
+  overflow: auto;
   text-indent: 5px;
 }
 
 ion-modle-g .product .list-price {
-  width: 98%;
   height: 26px;
   line-height: 18px;
   position: relative;
   bottom: 0;
   margin: 0 2%;
+  padding-bottom: 30px;
 }
 
 ion-modle-g .product .price-new {
@@ -30763,6 +30755,7 @@ page-product-detail .t-title {
   border: none !important;
   font-size: 1.6rem !important;
   color: #222222 !important;
+  text-align: left;
 }
 
 page-product-detail .t-title1 {
@@ -31273,7 +31266,8 @@ page-search .tsearch div div {
 }
 
 page-search .tsearch div input {
-  height: 3rem !important;
+  height: 37px !important;
+  border-radius: 8px !important;
 }
 
 page-search .tbutton input:focus::-webkit-input-placeholder {
