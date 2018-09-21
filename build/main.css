@@ -29182,7 +29182,31 @@ page-cart .dodelete {
   border-radius: .5rem;
 }
 
-page-category .cate_content {
+page-category .tsearch {
+  border-bottom: 0 !important;
+  margin-left: 6.8% !important;
+  background: rgba(0, 0, 0, 0);
+}
+
+page-category .tsearch input {
+  width: 85% !important;
+  border-radius: 15rem !important;
+  border: 0.1rem solid #ece5e5 !important;
+  padding-left: 9% !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+page-category .tsearch div div {
+  top: 0.99rem !important;
+  left: 3.9% !important;
+}
+
+page-category .changecolor {
+  background-color: #ffffff;
+}
+
+page-category .my_content {
+  margin-top: 1%;
   width: 100%;
   height: 100%;
   /*首先看高度100% 是否管用  如果没有作用我们要给元素设置绝对定位*/
@@ -29192,65 +29216,90 @@ page-category .cate_content {
   display: flex;
 }
 
-page-category .cate_content .cate_left {
-  width: 100px;
+page-category .my_content .left {
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 28%;
+  -ms-flex: 0 0 28%;
+  flex: 0 0 28%;
   height: 100%;
-  border-right: 0.2rem solid #eee;
+  background-color: #eeeeee;
+  color: #9E9E9E;
+  font-size: 15px;
   overflow-y: auto;
-  color: #666;
-}
-
-page-category .cate_content .cate_left ion-label {
-  font-size: 1rem;
-  overflow: visible;
-  white-space: normal;
-}
-
-page-category .cate_content .cate_right {
-  height: 100%;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  overflow-y: auto;
-}
-
-page-category .cate_content .cate_right ion-label {
-  font-size: 1rem;
-}
-
-page-category .cate_content .cate_right ion-col {
-  border: 0.05rem solid #eee;
-  margin-left: -0.05rem;
-  margin-top: -0.05rem;
-}
-
-page-category .cate_content .cate_right ion-col p {
   text-align: center;
-  color: #666;
 }
 
-page-category .cate_content .cate_right ion-col img {
-  display: block;
+page-category .my_content .left div {
+  position: relative;
+  padding: 10px 5px;
+  margin: 15px 0;
+}
+
+page-category .my_content .left div span {
+  height: 50px;
+  line-height: 150%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+page-category .my_content .left div div {
+  display: none;
+  width: 5px;
+  height: 40%;
+  padding: 0;
+  margin: 0;
+  background-color: #f53d3d;
+  position: absolute;
+  left: 0px;
+  top: 30%;
+}
+
+page-category .my_content .right {
+  height: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 72%;
+  -ms-flex: 0 0 72%;
+  flex: 0 0 72%;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+page-category .my_content .right img {
+  padding: 5px;
+  width: 100%;
+  height: 70px;
+}
+
+page-category .my_content .right .box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+page-category .my_content .right .box .every_box {
+  height: 120px;
+}
+
+page-category .my_content .right .box .every_box .img_div {
   margin: 0 auto;
-  max-width: 90%;
+  width: 70px;
 }
 
-page-category .cate_content .cate_right ion-col:nth-child(3n) {
-  border-right: 0px;
+page-category .my_content .right .box .every_box .img_div img {
+  width: 70px;
+  height: 70px;
 }
 
-page-category .cate_content .list p {
-  font-size: 1.3rem;
-  color: black;
-}
-
-page-category .label-ios {
+page-category .my_content .right .box .every_box .font_div {
+  width: 70px;
   margin: 0 auto;
-}
-
-page-category .search div div {
-  top: 11px !important;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 700;
+  color: #555555;
 }
 
 page-certification .tip {
