@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>众健商城</title>
+   <meta charset="UTF-8">
+    <title>众健商城</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <style type="text/css">
+        body {
+            background: #eeeeee;
+        }
+        .home_button {
+            background-color: #f53d3d;
+            margin: 10% auto 0 auto;
+            width: 90%;
+            color: #fff;
+            text-align: center;
+            height: 45px;
+            line-height: 45px;
+            letter-spacing: 1px;
+			display: none;
+        }
 
+        .other_button {
+            background-color: #f53d3d;
+            margin: 5% auto 0 auto;
+            color: #fff;
+            text-align: center;
+            width: 90%;
+            height: 45px;
+            line-height: 45px;
+            letter-spacing: 1px;
+            display: none;
+        }
+    </style>
 <script>
-window.onload=function(){
+var wxShopHref;
+var wxRegisterHref;
+var goTo = function(type){
+  if (type == 1){
+   window.location.href = wxShopHref;
+  } else{
+   window.location.href = wxRegisterHref;
+  }
+}
+
+var onloadFunction = function(){
 	  //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
 	  var ua = window.navigator.userAgent.toLowerCase();
 		//获取url中的参数
@@ -23,26 +68,37 @@ window.onload=function(){
 	 
 	  if(theRequest.usercode){
 		  if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-
-			  window.location.href= goWx + '?usercode=' +  theRequest.usercode;
+		  var button1 = document.getElementById("button1");
+            button1.style.display = "block";
+            var button2 = document.getElementById("button2");
+            button2.style.display = "block";
+		      wxShopHref = goWx + '?usercode=' +  theRequest.usercode;
+			  wxRegisterHref = goRegister + '?usercode=' +  theRequest.usercode;
 		  }else{
-			  window.location.href= goRegister + '?usercode=' +  theRequest.usercode;
+			  //window.location.href= goRegister + '?usercode=' +  theRequest.usercode;
 		  } 
 	  }else{
 		  if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-
-			  window.location.href= goWx;
+            var button1 = document.getElementById("button1");
+            button1.style.display = "block";
+            var button2 = document.getElementById("button2");
+            button2.style.display = "block";
+			  wxShopHref = goWx;
+			  wxRegisterHref = goRegister;
 		  }else{
 			  window.location.href= goRegister;
 		  }	  
 	  }
 
-}
+};
+window.onload = onloadFunction;
+
 </script>
 </head>
 
 <body>
-
+   <div onclick="goTo(1)" id="button1" class="home_button">微信商城</div>
+   <div onclick="goTo(2)" id="button2" class="other_button">下载客户端</div>
 </body>
 
 </html>
