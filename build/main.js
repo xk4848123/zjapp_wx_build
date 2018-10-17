@@ -3136,6 +3136,7 @@ var UserPage = /** @class */ (function () {
         var _this = this;
         if (moduleName == "agency") {
             this.webLink.goWeb("http://wxsp.iot.zhongjianmall.com/login.html");
+            return;
         }
         if (this.userInfo) {
             if (moduleName == 'fans') {
