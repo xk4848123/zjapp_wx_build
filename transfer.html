@@ -44,8 +44,10 @@ var wxRegisterHref;
 var goTo = function(type){
   if (type == 1){
    window.location.href = wxShopHref;
-  } else{
+  }else if (type == 2){
    window.location.href = wxRegisterHref;
+  }else{
+   window.location.href = "https://appnew.zhongjianmall.com/apk/zjapp.apk"
   }
 }
 
@@ -72,6 +74,8 @@ var onloadFunction = function(){
             button1.style.display = "block";
             var button2 = document.getElementById("button2");
             button2.style.display = "block";
+            var button3 = document.getElementById("button3");
+            button3.style.display = "block";
 		      wxShopHref = goWx + '?usercode=' +  theRequest.usercode;
 			  wxRegisterHref = goRegister + '?usercode=' +  theRequest.usercode;
 		  }else{
@@ -83,6 +87,8 @@ var onloadFunction = function(){
             button1.style.display = "block";
             var button2 = document.getElementById("button2");
             button2.style.display = "block";
+            var button3 = document.getElementById("button3");
+            button3.style.display = "block";
 			  wxShopHref = goWx;
 			  wxRegisterHref = goRegister;
 		  }else{
@@ -99,6 +105,7 @@ window.onload = onloadFunction;
 <body>
    <div onclick="goTo(1)" id="button1" class="home_button">微信商城</div>
    <div onclick="goTo(2)" id="button2" class="other_button">下载客户端</div>
+   <div onclick="goTo(3)" id="button3" class="other_button">安卓最新版快速下载通道</div>
 </body>
 
 </html>
