@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>众健商城</title>
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -10,10 +11,11 @@
     <!-- add to homescreen for ios -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-	    <style type="text/css">
+    <style type="text/css">
         body {
             background: #eeeeee;
         }
+
         .home_button {
             background-color: #f53d3d;
             margin: 10% auto 0 auto;
@@ -23,7 +25,7 @@
             height: 45px;
             line-height: 45px;
             letter-spacing: 1px;
-			display: none;
+            display: none;
         }
 
         .other_button {
@@ -38,74 +40,82 @@
             display: none;
         }
     </style>
-<script>
-var wxShopHref;
-var wxRegisterHref;
-var goTo = function(type){
-  if (type == 1){
-   window.location.href = wxShopHref;
-  }else if (type == 2){
-   window.location.href = wxRegisterHref;
-  }else{
-   window.location.href = "https://appnew.zhongjianmall.com/apk/zjapp.apk"
-  }
-}
+    <script>
+        var wxShopHref;
+        var wxRegisterHref;
+        var goTo = function (type) {
+            if (type == 1) {
+                window.location.href = wxShopHref;
+            } else if (type == 2) {
+                window.location.href = wxRegisterHref;
+            } else {
+                window.location.href = "https://appnew.zhongjianmall.com/apk/zjapp.apk"
+            }
+        }
 
-var onloadFunction = function(){
-	  //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
-	  var ua = window.navigator.userAgent.toLowerCase();
-		//获取url中的参数
-	    var url = location.search;
-	    var theRequest = new Object();
-	    if (url.indexOf("?") != -1) {
-	        var str = url.substr(1);
-	        strs = str.split("&");
-	        for (var i = 0; i < strs.length; i++) {
-	            theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
-	        }
-	    }
-	   var goWx = "https://appnew.zhongjianmall.com/zjapp/wechat/index.html";
-	   var goRegister = 'https://appnew.zhongjianmall.com/html/register.html';
-	  //通过正则表达式匹配ua中是否含有MicroMessenger字符串
-	 
-	  if(theRequest.usercode){
-		  if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-		  var button1 = document.getElementById("button1");
-            button1.style.display = "block";
-            var button2 = document.getElementById("button2");
-            button2.style.display = "block";
-            var button3 = document.getElementById("button3");
-            button3.style.display = "block";
-		      wxShopHref = goWx + '?usercode=' +  theRequest.usercode;
-			  wxRegisterHref = goRegister + '?usercode=' +  theRequest.usercode;
-		  }else{
-			  window.location.href = "https://appnew.zhongjianmall.com/apk/zjapp.apk"
-		  } 
-	  }else{
-		  if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-            var button1 = document.getElementById("button1");
-            button1.style.display = "block";
-            var button2 = document.getElementById("button2");
-            button2.style.display = "block";
-            var button3 = document.getElementById("button3");
-            button3.style.display = "block";
-			  wxShopHref = goWx;
-			  wxRegisterHref = goRegister;
-		  }else{
-			  window.location.href = "https://appnew.zhongjianmall.com/apk/zjapp.apk"
-		  }	  
-	  }
+        var onloadFunction = function () {
+            //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
+            var ua = window.navigator.userAgent.toLowerCase();
+            //获取url中的参数
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+                }
+            }
+            var goWx = "https://appnew.zhongjianmall.com/zjapp/wechat/index.html";
+            var goRegister = 'https://appnew.zhongjianmall.com/html/register.html';
+            //通过正则表达式匹配ua中是否含有MicroMessenger字符串
 
-};
-window.onload = onloadFunction;
+            if (theRequest.usercode) {
+                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                    var button1 = document.getElementById("button1");
+                    button1.style.display = "block";
+                    var button2 = document.getElementById("button2");
+                    button2.style.display = "block";
+                    var button3 = document.getElementById("button3");
+                    button3.style.display = "block";
+                    wxShopHref = goWx + '?usercode=' + theRequest.usercode;
+                    wxRegisterHref = goRegister + '?usercode=' + theRequest.usercode;
+                } else {
+                    if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+                        window.location.href = goRegister + '?usercode=' + theRequest.usercode;
+                    }else{
+                        window.location.href = "https://appnew.zhongjianmall.com/apk/zjapp.apk"
+                    }
+                }
+            } else {
+                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                    var button1 = document.getElementById("button1");
+                    button1.style.display = "block";
+                    var button2 = document.getElementById("button2");
+                    button2.style.display = "block";
+                    var button3 = document.getElementById("button3");
+                    button3.style.display = "block";
+                    wxShopHref = goWx;
+                    wxRegisterHref = goRegister;
+                } else {
+                    if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+                        window.location.href = goRegister;
+                    }else{
+                        window.location.href = "https://appnew.zhongjianmall.com/apk/zjapp.apk"
+                    }
+                }
+            }
 
-</script>
+        };
+        window.onload = onloadFunction;
+
+    </script>
 </head>
 
 <body>
-   <div onclick="goTo(1)" id="button1" class="home_button">微信商城</div>
-   <div onclick="goTo(2)" id="button2" class="other_button">下载客户端</div>
-   <div onclick="goTo(3)" id="button3" class="other_button">安卓最新版快速下载通道</div>
+    <div onclick="goTo(1)" id="button1" class="home_button">微信商城</div>
+    <div onclick="goTo(2)" id="button2" class="other_button">下载客户端</div>
+    <div onclick="goTo(3)" id="button3" class="other_button">安卓最新版快速下载通道</div>
 </body>
 
 </html>
