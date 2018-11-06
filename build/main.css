@@ -30034,14 +30034,12 @@ page-information .status-line {
 page-key-product-list .sub_header {
   height: 4rem;
   line-height: 4rem;
-  position: fixed;
   width: 100%;
   border-bottom: 1px solid #eee;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  z-index: 2;
   background: #fff;
 }
 
@@ -30142,14 +30140,12 @@ page-login ion-label[fixed] {
 page-members-product .sub_header {
   height: 4rem;
   line-height: 4rem;
-  position: fixed;
   width: 100%;
   border-bottom: 1px solid #eee;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  z-index: 2;
   background: #fff;
 }
 
@@ -31001,14 +30997,12 @@ page-product-detail .headimg {
 page-productlist .sub_header {
   height: 4rem;
   line-height: 4rem;
-  position: fixed;
   width: 100%;
   border-bottom: 1px solid #eee;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  z-index: 2;
   background: #fff;
 }
 
@@ -31388,14 +31382,12 @@ page-search .history {
 page-search .sub_header {
   height: 4rem;
   line-height: 4rem;
-  position: fixed;
   width: 100%;
   border-bottom: 1px solid #eee;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  z-index: 2;
   background: #fff;
 }
 
