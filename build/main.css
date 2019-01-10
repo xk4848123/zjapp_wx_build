@@ -30557,7 +30557,7 @@ page-orderlist .center img {
 
 page-orderlist .center .productName {
   position: absolute;
-  top: 9px;
+  top: 6px;
   left: 85px;
   right: 85px;
   display: -webkit-box;
@@ -30568,7 +30568,7 @@ page-orderlist .center .productName {
 
 page-orderlist .center .productPrice {
   position: absolute;
-  top: 9px;
+  top: 6px;
   height: 20px;
   line-height: 20px;
   right: 5px;
@@ -30576,7 +30576,7 @@ page-orderlist .center .productPrice {
 
 page-orderlist .center .productNum {
   position: absolute;
-  top: 29px;
+  top: 26px;
   height: 20px;
   line-height: 20px;
   right: 5px;
@@ -30636,7 +30636,7 @@ page-orders .cardDiv .center img {
 
 page-orders .cardDiv .center .productName {
   position: absolute;
-  top: 9px;
+  top: 6px;
   left: 85px;
   right: 85px;
   display: -webkit-box;
@@ -30645,9 +30645,21 @@ page-orders .cardDiv .center .productName {
   overflow: hidden;
 }
 
+page-orders .cardDiv .center .specName {
+  position: absolute;
+  top: 46px;
+  left: 85px;
+  right: 85px;
+  color: #666666;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 page-orders .cardDiv .center .productPrice {
   position: absolute;
-  top: 9px;
+  top: 6px;
   height: 20px;
   line-height: 20px;
   right: 5px;
@@ -30655,7 +30667,7 @@ page-orders .cardDiv .center .productPrice {
 
 page-orders .cardDiv .center .productNum {
   position: absolute;
-  top: 29px;
+  top: 26px;
   height: 20px;
   line-height: 20px;
   right: 5px;
